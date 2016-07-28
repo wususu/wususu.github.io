@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title><![CDATA[Ubuntu 连接远程服务器]]></title>
+      <url>http://wususu.github.io/2016/07/28/Ubuntu-%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <content type="html"><![CDATA[<ol>
+<li>更新:<br> $sudo apt-get update</li>
+<li>安装 ssh:<br> $sudo apt-get install openssh-server</li>
+<li>启动ssh-server<br> $ /etc/init.d/ssh restart</li>
+<li>确认工作:<br> $netstat -tlp<br> 看到 tcp6 0 0 <em>:ssh </em>:* LISTEN -  说明已运行</li>
+<li>通过ssh登录服务器:<br> $ssh -l 用户名 IP<br> 回车之后输入密码</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[python下使用Redis]]></title>
       <url>http://wususu.github.io/2016/07/21/python%E4%B8%8B%E4%BD%BF%E7%94%A8Redis/</url>
       <content type="html"></content>
