@@ -4,15 +4,24 @@
   
     
     <entry>
+      <title><![CDATA[使用sftp与远程主机交互]]></title>
+      <url>http://blog.wususu.cn/2016/07/28/%E4%BD%BF%E7%94%A8sftp%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E4%BA%A4%E4%BA%92/</url>
+      <content type="html"><![CDATA[<p> <em>简介</em><br>  sftp是Secure File Transfer Protocol的缩写，安全文件传送协议。可以为传输文件提供一种安全的加密方法。它类似于 ftp, 但它进行加密传输，比FTP有更高的安全性。<br><a id="more"></a></p>
+<ul>
+<li><p>连接远程主机:<br>例如主机IP: 123.456.78.90 或者域名: wususu.cn ,用户名: wususu<br>在命令行模式下: $sfty wususu@123.456.78.90 或者$sfty wususu@wususu.cn.<br>之后按提示输入密码</p>
+</li>
+<li><p>sftp&gt; get 远程主机下文件的路径   将文件保存到本地电脑的路径</p>
+</li>
+<li><p>sftp&gt; put 本地文件的路径 将文件版保存到远程主机的路径</p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Ubuntu 连接远程服务器]]></title>
       <url>http://blog.wususu.cn/2016/07/28/Ubuntu-%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-      <content type="html"><![CDATA[<ol>
-<li>更新:<br> $sudo apt-get update</li>
-<li>安装 ssh:<br> $sudo apt-get install openssh-server</li>
-<li>启动ssh-server<br> $ /etc/init.d/ssh restart</li>
-<li>确认工作:<br> $netstat -tlp<br> 看到 tcp6 0 0 <em>:ssh </em>:* LISTEN -  说明已运行</li>
-<li>通过ssh登录服务器:<br> $ssh -l 用户名 IP<br> 回车之后输入密码</li>
-</ol>
+      <content type="html"><![CDATA[<p> 1.更新:<br>    $sudo apt-get update<br> 2.安装 ssh:<br>    $sudo apt-get install openssh-server<br>    <a id="more"></a><br> 3.启动ssh-server<br>    $ /etc/init.d/ssh restart<br> 4.确认工作:<br>    $netstat -tlp<br>  看到 tcp6 0 0 <em>:ssh </em>:* LISTEN -  说明已运行<br> 5.通过ssh登录服务器:<br>    $ssh -l 用户名 IP<br>  回车之后输入密码</p>
 ]]></content>
     </entry>
     
@@ -25,7 +34,7 @@
     <entry>
       <title><![CDATA[DFA-确定有限状态自动机]]></title>
       <url>http://blog.wususu.cn/2016/07/19/DFA-%E7%A1%AE%E5%AE%9A%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA/</url>
-      <content type="html"><![CDATA[<blockquote><p>确定有限状态自动机或确定有限自动机（英语：deterministic finite automation, DFA）是一个能实现状态转移的自动机对于一个给定的属于该自动机的状态和一个属于该自动机字母表 {\displaystyle \Sigma } \Sigma 的字符，它都能根据事先给定的转移函数转移到下一个状态（这个状态可以是先前那个状态）。</p>
+      <content type="html"><![CDATA[<blockquote><p>确定有限状态自动机或确定有限自动机（英语：deterministic finite automation, DFA）是一个能实现状态转移的自动机对于一个给定的属于该自动机的状态和一个属于该自动机<br><a id="more"></a><br>字母表 {\displaystyle \Sigma } \Sigma 的字符，它都能根据事先给定的转移函数转移到下一个状态（这个状态可以是先前那个状态）。</p>
 <footer><strong>Wiki</strong><cite><a href="https://zh.wikipedia.org/wiki/%E7%A1%AE%E5%AE%9A%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA" target="_blank" rel="external">zh.wikipedia.org/wiki/%E7%A1%AE%E5%AE%9A%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E8%87%AA%E5%8A%A8%E6%9C%BA</a></cite></footer></blockquote>
 <h3 id="简介"><a href="#简介" class="headerlink" title="简介:"></a>简介:</h3><p>  DFA的基本功能是可以通过event和当前的state得到下一个state，即event+state=nextstate,如下图所示,和数字逻辑电路的状态图类似:<br> <img src="/img/201607201.png" alt=""></p>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用:"></a>应用:</h3><p>  DFA引用很广,例如敏感词语的过滤,也就是常说的和谐,将敏感词语替换成”**”,这次的项目需求是判断文本是否有敏感词,以此划分权值.</p>
@@ -43,7 +52,7 @@
     <entry>
       <title><![CDATA[基于Mojo-Weixin+图灵+python的微信机器人]]></title>
       <url>http://blog.wususu.cn/2016/07/17/%E5%9F%BA%E4%BA%8EMojo-Weixin-%E5%9B%BE%E7%81%B5-python%E7%9A%84%E5%BE%AE%E4%BF%A1%E6%9C%BA%E5%99%A8%E4%BA%BA-1/</url>
-      <content type="html"><![CDATA[<h2 id="主要分为三个模块"><a href="#主要分为三个模块" class="headerlink" title="主要分为三个模块: "></a>主要分为三个模块: </h2><p>一.微信交互模块: 这里我直接使用Mojo-Wexin进行模拟登录与数据交互<br>二.智能聊天模块: 这里采用的是图灵机器人<br>三.数据的交互模块: 采用python编写的脚本处理数据进行前两个模块的交互</p>
+      <content type="html"><![CDATA[<h2 id="主要分为三个模块"><a href="#主要分为三个模块" class="headerlink" title="主要分为三个模块: "></a>主要分为三个模块: </h2><p>一.微信交互模块: 这里我直接使用Mojo-Wexin进行模拟登录与数据交互<br>二.智能聊天模块: 这里采用的是图灵机器人<a id="more"></a><br>三.数据的交互模块: 采用python编写的脚本处理数据进行前两个模块的交互</p>
 <hr>
 <h2 id="一-微信交互"><a href="#一-微信交互" class="headerlink" title="一.微信交互"></a>一.微信交互</h2><p>  通过API通讯,具体查阅文档<a href="https://github.com/sjdy521/Mojo-Weixin" target="_blank" rel="external">Mojo-Weixin</a></p>
 <h2 id="二-智能聊天"><a href="#二-智能聊天" class="headerlink" title="二.智能聊天"></a>二.智能聊天</h2><h5 id="这里使用的是图灵机器人首先要注册一个帐号获取机器人钥匙-地址用于通讯-secret用于数据的加密-这里纯粹玩玩-就不用了-Mojo是通过模拟网页微信登录-所以要用API接入文档"><a href="#这里使用的是图灵机器人首先要注册一个帐号获取机器人钥匙-地址用于通讯-secret用于数据的加密-这里纯粹玩玩-就不用了-Mojo是通过模拟网页微信登录-所以要用API接入文档" class="headerlink" title="这里使用的是图灵机器人首先要注册一个帐号获取机器人钥匙,地址用于通讯,secret用于数据的加密(这里纯粹玩玩,就不用了),Mojo是通过模拟网页微信登录,所以要用API接入文档"></a>这里使用的是图灵机器人首先要注册一个帐号获取机器人钥匙,地址用于通讯,secret用于数据的加密(这里纯粹玩玩,就不用了),Mojo是通过模拟网页微信登录,所以要用API接入文档</h5><p> <img src="/img/tulin.jpg" alt="图灵key"></p>
@@ -64,7 +73,7 @@
     <entry>
       <title><![CDATA[BeautifulSoup 整理]]></title>
       <url>http://blog.wususu.cn/2016/07/14/2016-07-14-BeautifulSoup-%E6%95%B4%E7%90%86/</url>
-      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介:"></a>简介:</h1><p> Beautiful Soup 是一个可以从HTML或XML文件中提取数据的Python库.<br> 它能够通过你喜欢的转换器实现惯用的文档导航,查找,修改文档的方式.<br> 简单说就是利用bs4”美化”HTML,定位HTML标签来获得目标数据,实乃爬虫一大利器.</p>
+      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介:"></a>简介:</h1><p> Beautiful Soup 是一个可以从HTML或XML文件中提取数据的Python库.<br> 它能够通过你喜欢的转换器实现惯用的文档导航,查找,修改文档的方式.<br> <a id="more"></a><br> 简单说就是利用bs4”美化”HTML,定位HTML标签来获得目标数据,实乃爬虫一大利器.</p>
 <h1 id="属性"><a href="#属性" class="headerlink" title="属性:"></a>属性:</h1><p> <strong>1. Tag</strong><br>soup.+tag_name  可以多次调用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">eg:  soup.head</div><div class="line">	<span class="comment"># &lt;head&gt;&lt;title&gt;The Dormouse's story&lt;/title&gt;&lt;/head&gt;</span></div><div class="line">        soup.body.b</div><div class="line">	<span class="comment"># &lt;b&gt;The Dormouse's story&lt;/b&gt;</span></div></pre></td></tr></table></figure><br>  重命名一个tag,改变属性的值,添加或删除属性:<br>  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">eg:  soup = BeautifulSoup(<span class="string">'&lt;b class="boldest"&gt;Extremely bold&lt;/b&gt;'</span>)</div><div class="line">	tag = soup.b</div><div class="line"></div><div class="line">	tag.name = <span class="string">"blockquote"</span></div><div class="line">	tag[<span class="string">'class'</span>] = <span class="string">'verybold'</span></div><div class="line">	tag[<span class="string">'id'</span>] = <span class="number">1</span></div><div class="line">	<span class="comment"># &lt;blockquote class="verybold" id="1"&gt;Extremely bold&lt;/blockquote&gt;</span></div><div class="line"></div><div class="line">	<span class="keyword">del</span> tag[<span class="string">'class'</span>]</div><div class="line">	<span class="keyword">del</span> tag[<span class="string">'id'</span>]</div><div class="line">	<span class="comment"># &lt;blockquote&gt;Extremely bold&lt;/blockquote&gt;</span></div></pre></td></tr></table></figure></p>
 <p> <strong>3. 属性</strong><br>   <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">eg:  tag.attrs</div><div class="line">	<span class="comment">#[''class', 'blodest']</span></div><div class="line">	tag[<span class="string">'属性名字'</span>]</div><div class="line">   </div></pre></td></tr></table></figure></p>
 <p> <strong>2. 子孙</strong><br> .contents 属性可以将tag的子节点以列表的方式输出:<br> .children 生成器,可以对tag的子节点进行循环:<br> .descendants   获得子孙节点</p>
