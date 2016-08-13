@@ -4,6 +4,23 @@
   
     
     <entry>
+      <title><![CDATA[青友会视频培训 (一)]]></title>
+      <url>http://blog.wususu.cn/2016/08/13/%E9%9D%92%E5%8F%8B%E4%BC%9A%E8%A7%86%E9%A2%91%E5%9F%B9%E8%AE%AD%E4%B8%80/</url>
+      <content type="html"><![CDATA[<h3 id="一"><a href="#一" class="headerlink" title="一."></a>一.</h3><p>电脑要求：至少i5+4G(建议加个内存条上8G)</p>
+<h3 id="二"><a href="#二" class="headerlink" title="二."></a>二.</h3><p>Pr：<br>下载地址：<a href="https://yunpan.cn/Oc6NuwbjP5J2Ex" target="_blank" rel="external">https://yunpan.cn/Oc6NuwbjP5J2Ex</a> <a id="more"></a> 访问密码 6ee0<br>破解：<a href="http://www.yudouyudou.com/ziyuanxiazai/ruanjianziyuan/473.html" target="_blank" rel="external">http://www.yudouyudou.com/ziyuanxiazai/ruanjianziyuan/473.html</a><br>官方教程：<a href="https://yunpan.cn/Oc6NVDutCdyakv" target="_blank" rel="external">https://yunpan.cn/Oc6NVDutCdyakv</a>  访问密码 4e61（反正我懒得去看）<br>Ae：</p>
+<p>下载与破解：<a href="http://blog.sina.com.cn/s/blog_6306f2c60102evi1.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_6306f2c60102evi1.html</a><br>Ae模板地址：<a href="http://www.lookae.com/after-effects/" target="_blank" rel="external">http://www.lookae.com/after-effects/</a><br>            <a href="http://www.xcmoban.com/plus/list.php?tid=1" target="_blank" rel="external">http://www.xcmoban.com/plus/list.php?tid=1</a></p>
+<h3 id="三"><a href="#三" class="headerlink" title="三."></a>三.</h3><p>Pr我主要用来对视频的整合编辑。Ae用模板来制作炫酷的特效和视频/图片框架，复杂的模板比较吃内存。<br>基本上我们使用的是这两个软件的一部分功能而已，秉承着够用的原则，推荐的学习方式是在做中学，通过动手制作视频学习使用这些软件。</p>
+<h4 id="制作路线："><a href="#制作路线：" class="headerlink" title="制作路线："></a>制作路线：</h4><ol>
+<li>确定主题：想要表达什么，定下风格</li>
+<li>架构视频，划分模块: 开场/内容分块/高潮/落幕/…</li>
+<li>背景音乐：音乐是很重要的组成部分，一个糟糕的视频，只要背景音乐选取恰当，音频剪辑与视频节奏匹配，都能使得观看者共鸣。</li>
+<li>分块制作：将各个模块制作并渲染</li>
+<li>整合模块    <h3 id="四"><a href="#四" class="headerlink" title="四."></a>四.</h3>Pr的简单操作：<br>打开后选择新建项目：<br> <img src="/img/20168131.png" alt="新建项目"><br>接下来更改项目位置，其他默认就行了：<br><img src="/img/20168132.png" alt="新建项目"><br>新建序列，同样默认，后面加入素材会提示变更比例：<br><img src="/img/20168133.png" alt="新建序列"><br>时间轴会有新序列，上半部分是图片与视频区，下半部分是音频区，左边一排为工具栏，将素材区域拖拉到此处可以进行视频编辑,记得Ctrl+z(撤回)是非常有用的<br><img src="/img/20168134.png" alt="序列区"><br>这个是预览区，调好时间轴的进程线后可以在此区域进行预览<br><img src="/img/20168135.png" alt="预览区"><br>这个是素材区域，将素材拖到此区域，就可以完成素材导入（菜单栏的文选项也可进行导入操作）<br><img src="/img/20168136.png" alt="素材"><br>这个地方有可以对视频添加特效的素材，特效可以下载扩充<br><img src="/img/20168137.png" alt="特效"><br>每个人的工作区设置各不相同，可以在菜单栏-&gt;窗口处进行增添<br><img src="/img/20168138.png" alt="工作区"><br>完成视频编辑后，菜单栏 文件-&gt; 导出 -&gt; 媒体 导出渲染，记得选择H.264格式的，这样视频不会太大，画质压缩也可以接受。<br><img src="/img/20168139.png" alt="导出"><br><img src="/img/201681310.png" alt="渲染设置">    <h3 id="五"><a href="#五" class="headerlink" title="五."></a>五.</h3>这篇博文比较短,只是讲了一些基本操作,我更希望的是六位同学能在自己的摸索中get到新技能,通过动手,查看官方使用文档,查阅文献与视频来学会怎么制作一个视频,掌握自学技巧.建议是遇到问题或者想要使用某个不会用的特效的时候有针对性地去查去学,死啃教程是很笨的一种做法.<br>好吧,说到底是我懒 - -!</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用sftp与远程主机交互]]></title>
       <url>http://blog.wususu.cn/2016/07/28/%E4%BD%BF%E7%94%A8sftp%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E4%BA%A4%E4%BA%92/</url>
       <content type="html"><![CDATA[<p> <em>简介</em><br>  sftp是Secure File Transfer Protocol的缩写，安全文件传送协议。可以为传输文件提供一种安全的加密方法。它类似于 ftp, 但它进行加密传输，比FTP有更高的安全性。<br><a id="more"></a></p>
