@@ -4,6 +4,13 @@
   
     
     <entry>
+      <title><![CDATA[Flask学习记录]]></title>
+      <url>http://blog.wususu.cn/2016/10/10/Flask%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<h3 id="1-python3-pymysql-flask-sqlalchemy"><a href="#1-python3-pymysql-flask-sqlalchemy" class="headerlink" title="1. python3 + pymysql + flask-sqlalchemy"></a>1. python3 + pymysql + flask-sqlalchemy</h3><p>问题:  无法连接mysql<br>连接路由: mysql://username:password@server/db<br>解决方法: 将连接路由改为,  mysql+pymysql://username:password@server/db</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[thinkPHP问题记录]]></title>
       <url>http://blog.wususu.cn/2016/10/09/thinkPHP%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
       <content type="html"><![CDATA[<blockquote>
