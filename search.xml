@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title><![CDATA[jQuery 学习记录]]></title>
+      <url>http://blog.wususu.cn/2016/11/29/jQuery-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<h3 id="Selecting-Elements"><a href="#Selecting-Elements" class="headerlink" title="Selecting Elements"></a>Selecting Elements</h3><ul>
+<li><h4 id="Selecting-direct-child-elements"><a href="#Selecting-direct-child-elements" class="headerlink" title="Selecting direct child elements"></a>Selecting direct child elements</h4><blockquote>
+<p>select all anchor elements that reside directly beneath list items, you could use this selector: li &gt; a. All anchors that <strong>exist directly</strong> beneath list iteams.</p>
+<pre><code>{% codeblock lang:js %}
+	<ul id="nav">
+		<li><a href="#anchor1">Anchor 1</a></li>
+		<li><a href="#anchor2">Anchor 2</a></li>
+		<li><span><a href="#anchor3">Anchor 3</a></span></li>
+	</ul>
+	{% endcodeblock %}
+</code></pre></blockquote>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[pdo的使用]]></title>
       <url>http://blog.wususu.cn/2016/10/18/pdo%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>PHP 数据对象 （PDO） 扩展为PHP访问数据库定义了一个轻量级的一致接口。实现 PDO 接口的每个数据库驱动可以公开具体数据库的特性作为标准扩展功能。 注意利用 PDO 扩展自身并不能实现任何数据库功能；必须使用一个 具体数据库的 PDO 驱动 来访问数据库服务。</p>
