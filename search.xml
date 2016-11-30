@@ -6,18 +6,35 @@
     <entry>
       <title><![CDATA[jQuery 学习记录]]></title>
       <url>http://blog.wususu.cn/2016/11/29/jQuery-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-      <content type="html"><![CDATA[<h3 id="Selecting-Elements"><a href="#Selecting-Elements" class="headerlink" title="Selecting Elements"></a>Selecting Elements</h3><ul>
-<li><h4 id="Selecting-direct-child-elements"><a href="#Selecting-direct-child-elements" class="headerlink" title="Selecting direct child elements"></a>Selecting direct child elements</h4><blockquote>
-<p>select all anchor elements that reside directly beneath list items, you could use this selector: li &gt; a. All anchors that <strong>exist directly</strong> beneath list iteams.</p>
-<pre><code>{% codeblock lang:js %}
-	<ul id="nav">
-		<li><a href="#anchor1">Anchor 1</a></li>
-		<li><a href="#anchor2">Anchor 2</a></li>
-		<li><span><a href="#anchor3">Anchor 3</a></span></li>
-	</ul>
-	{% endcodeblock %}
-</code></pre></blockquote>
+      <content type="html"><![CDATA[<h2 id="Selecting-Elements"><a href="#Selecting-Elements" class="headerlink" title="Selecting Elements"></a>Selecting Elements</h2><ul>
+<li><h3 id="Selecting-direct-child-elements"><a href="#Selecting-direct-child-elements" class="headerlink" title="Selecting direct child elements"></a>Selecting direct child elements</h3><ol>
+<li><p>select all anchor elements that reside directly beneath list items, you could use this selector: li &gt; a. All anchors that <strong>exist directly</strong> beneath list iteams.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;ul id="nav"&gt;</div><div class="line">	&lt;li&gt;&lt;a href="#anchor1"&gt;Anchor 1&lt;/a&gt;&lt;/li&gt;</div><div class="line">	&lt;li&gt;&lt;a href="#anchor2"&gt;Anchor 2&lt;/a&gt;&lt;/li&gt;</div><div class="line">	&lt;li&gt;&lt;span&gt;&lt;a href="#anchor3"&gt;Anchor 3&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">jQuery('#nav li &gt; a');</div><div class="line">//this will select two elements as expect</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 </li>
+<li><p>select all direct children</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">jQuery(&apos;#content&apos;).children(); == jQuery(&apos;#content &gt; *&apos;);</div><div class="line">//the first one run faster than the other</div></pre></td></tr></table></figure>
+<p>it also can filter the result:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery(&apos;#content&apos;).children(&apos;p&apos;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><h3 id="Selecting-specific-siblings"><a href="#Selecting-specific-siblings" class="headerlink" title="Selecting specific siblings"></a>Selecting specific siblings</h3><ol>
+<li><p>use the adjacent sibling combinator(+)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;content&quot;&gt;</div><div class="line">	&lt;h1&gt;Main title&lt;/h1&gt;</div><div class="line">	&lt;h2&gt;Section title&lt;/h2&gt;</div><div class="line">	&lt;p&gt;Some content...&lt;/p&gt;</div><div class="line">	&lt;h2&gt;Section title&lt;/p&gt;</div><div class="line">	&lt;p&gt;More content&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	jQuery(&apos;h1 + h2&apos;);</div><div class="line">//Selects all the h2 tags that immediately follow h1   </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>use <strong>siblings()</strong> to select and filter all siblings of an elements </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">jQuery(&apos;h1&apos;).siblings(&apos;h2, h3, p&apos;)</div><div class="line">//Select all h2 h3 and p elements that are siblings of h1</div></pre></td></tr></table></figure>
+</li>
+<li><p>the <strong>nextALL()</strong> method select all the siblings elements behind an elements, it also accept a selector to filter the selection</p>
+</li>
+<li><p>siblings combinator(~), work like (+)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">jQuery(&apos;li.selected ~ li&apos;)</div><div class="line">// all li immediately follow &lt;li class = &quot;selected&quot;&gt;&lt;/li&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><h3 id="Selecting-elements-by-index-order"><a href="#Selecting-elements-by-index-order" class="headerlink" title="Selecting elements by index order"></a>Selecting elements by index order</h3></li>
 </ul>
 ]]></content>
     </entry>
