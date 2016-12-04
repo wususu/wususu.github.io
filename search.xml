@@ -36,6 +36,23 @@
 </li>
 <li><h3 id="Selecting-elements-by-index-order"><a href="#Selecting-elements-by-index-order" class="headerlink" title="Selecting elements by index order"></a>Selecting elements by index order</h3></li>
 </ul>
+<ul>
+<li><h3 id="Faster-Simpler-More-Fun"><a href="#Faster-Simpler-More-Fun" class="headerlink" title="Faster, Simpler, More Fun"></a>Faster, Simpler, More Fun</h3><ol>
+<li><p>What’s Wrong with $(this)<br>面向对象编程时, this可以指向对象(等价于python 的self)<br>事件中可以作为属性, 指向一个元素(标签)<br>注: 谁调用函数, this就指向谁.在直接使用的函数(不是作为对象的操作方法)里面, this是window对象, 要先用js变量将其保存.</p>
+</li>
+<li><p>Removing Redundant Repetition<br>$.toggle(Boolean) 控制标签的显示/隐藏<br>.change() –值(回车才显示)<br>.keyup() –输入(不用回车)<br>.bind(事件, handler) –绑定事件与事件处理<br>.trigger() –触发选中元素的指定事件</p>
+</li>
+<li><p>Formatting your jQuery Chains<br>每个方法拆分到每一行, 对同意对象的操作保持同一缩进</p>
+</li>
+<li><p>Borrowing Code from Other Libraries<br>在你的jQuery中增加一个函数: eg:jQuery.fn.addfunction = function(){};</p>
+</li>
+<li><p>Writing a Custom Iterator<br>每秒显示一个元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">       &lt;span class=&quot;reveal&quot;&gt;Ready?&lt;/span&gt;</div><div class="line">       &lt;span class=&quot;reveal&quot;&gt;On your Mark!&lt;/span&gt;</div><div class="line">&lt;span class=&quot;reveal&quot;&gt;Get set!&lt;/span&gt;</div><div class="line">&lt;span class=&quot;reveal&quot;&gt;Go!&lt;/span&gt;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">       jQuery.slowEach = function (array, interval, callback) &#123;</div><div class="line">           if (! array.length) return ;</div><div class="line">           var i = 0;</div><div class="line"></div><div class="line"></div><div class="line">           function next() &#123;</div><div class="line">               if (callback.call( array[i], i, array[i] ) !== false)&#123;</div><div class="line">                   if (++i &lt; array.length)&#123;</div><div class="line">                       setTimeout (next, interval);</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">           next();</div><div class="line">           return array;</div><div class="line">       &#125;;</div><div class="line"></div><div class="line">       jQuery.fn.slowEach = function (interval, callback) &#123;</div><div class="line">           return jQuery.slowEach(this, interval, callback );</div><div class="line">       &#125;;</div><div class="line"></div><div class="line">       $(&apos;.reveal&apos;).hide();</div><div class="line">       $(&apos;.reveal&apos;).slowEach(1000, function () &#123;</div><div class="line">           $(this).show();&#125;);	</div><div class="line">   </div></pre></td></tr></table></figure>
+<p>注: callback函数通过.call()增加一个参数设置其作用的对象, 并调用.</p>
+</li>
+</ol>
+</li>
+</ul>
 ]]></content>
     </entry>
     
