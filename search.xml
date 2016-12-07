@@ -180,7 +180,7 @@
       <url>http://blog.wususu.cn/2016/07/28/%E4%BD%BF%E7%94%A8sftp%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E4%BA%A4%E4%BA%92/</url>
       <content type="html"><![CDATA[<p> <em>简介</em><br>  sftp是Secure File Transfer Protocol的缩写，安全文件传送协议。可以为传输文件提供一种安全的加密方法。它类似于 ftp, 但它进行加密传输，比FTP有更高的安全性。<br><a id="more"></a></p>
 <ul>
-<li><p>连接远程主机:<br>例如主机IP: 123.456.78.90 或者域名: wususu.cn ,用户名: wususu<br>在命令行模式下: $sfty wususu@123.456.78.90 或者$sfty wususu@wususu.cn.<br>之后按提示输入密码</p>
+<li><p>连接远程主机:<br>例如主机IP: 123.456.78.90 或者域名: wususu.cn ,用户名: wususu<br>在命令行模式下: $sftp wususu@123.456.78.90 或者$sftp wususu@wususu.cn.<br>之后按提示输入密码</p>
 </li>
 <li><p>sftp&gt; get 远程主机下文件的路径   将文件保存到本地电脑的路径</p>
 </li>
