@@ -4,6 +4,57 @@
   
     
     <entry>
+      <title><![CDATA[搭建境外服务器,科学越过GFW]]></title>
+      <url>http://blog.wususu.cn/2017/01/09/%E6%90%AD%E5%BB%BA%E5%A2%83%E5%A4%96%E6%9C%8D%E5%8A%A1%E5%99%A8-%E7%A7%91%E5%AD%A6%E8%B6%8A%E8%BF%87GFW/</url>
+      <content type="html"><![CDATA[<p>  翻墙是一个程序员的必备技能之一,这里介绍一下我所使用过的翻墙方法:</p>
+<ul>
+<li><strong>购买VPN</strong>: 全局翻墙,不太稳定,数据不安全,性价比不高, 这种只在windows使用过,搜索引擎一搜一大把,可以免费体验,不再赘述</li>
+<li><strong>修改hosts文件</strong>: 免费,不稳定,安全,需要经常更新hosts,勉强支持网页搜索,点击<a href="https://laod.cn/hosts/2016-google-hosts.html" target="_blank" rel="external">这里</a>查看教程 </li>
+<li><strong>使用lantern</strong>: 网速一般,全局翻墙可以流畅看youtube,数据不安全,使用方便,每月免费使用800M, 超额将限速一般情况下,lantern可以满足大部分需求了<br>  目前支持 windows, linux 和 android 三种系统,据说ios的也快出了点击这里<a href="https://getlantern.org/" target="_blank" rel="external">下载</a></li>
+<li><strong>使用shadowsocks</strong>, 这里又分为两种:<ul>
+<li>第一种是<strong>购买使用免费帐号</strong>,使用别人搭建的境外vps,不过这也意味着你上网的数据将会被代理的服务器获取, 网速取决于该vps的配置以及ss使用量</li>
+<li>第二种是<strong>自己搭建</strong>境外服务器, 所有的数据都由自己一手掌握,是最快最安全的,不过需要购买vps和一定的技术支持</li>
+</ul>
+</li>
+</ul>
+<p><strong>接下来就详细介绍下如何着手搭建自己的ss服务器以及各种客户端链接方式 </strong></p>
+<h4 id="购买vps"><a href="#购买vps" class="headerlink" title="购买vps"></a>购买vps</h4><p>  vps,即虚拟主机,我使用的是搬瓦工的主机,点击<a href="http://banwagong.cn/" target="_blank" rel="external">这里</a>进行购买,挑最便宜的买,年付$11.99没货,就选第二便宜的$18.99,这里要注意,搬瓦工是支持升级主机配置的,所以一开始最好买便宜的一个月,用的顺手再延期加配置.<strong>Tips: 记得在中文官网领取折扣卷</strong><br>  <img src="/img/201701091.png" alt="购买页面"></p>
+<p>  因为是国外供应商,可能你会担心交易的问题,这可以放心,搬瓦工已经替你考虑好了,付款方式是<strong>支持Alipay</strong>的.</p>
+<h4 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h4><p>  购买成功后将会收到服务器ip端口还有root密码的邮件,通过ssh就能连接上服务器了,如果对Linux系统不熟悉,没事,那就继续跟着我走:</p>
+<ul>
+<li><p>在菜单Services处找到<strong>My Services</strong>可以看到所购买服务器的基本信息,点击<strong>KiwiVM Control Panel</strong><br><img src="/img/201701093.png" alt="my services"></p>
+</li>
+<li><p>Main Control 可以看到该服务器的基本信息, 以及进行<strong>重启关机开机</strong>等操作<br><img src="/img/201701092.png" alt="控制面板"></p>
+</li>
+<li><p>初始配置是Centos的系统,我是使用Ubuntu,所以先<strong>点击stop进行关机</strong>,接着进入Install new OS菜单选择自己熟悉的<strong>操作系统进行安装</strong>.可以看到,搬瓦工只支持Ubuntu和Centos,并不支持windows系统<br><img src="/img/201701095.png" alt="安装镜像"></p>
+</li>
+<li><p>等到安装完成之后,就可以<strong>点击Root shell-interactve</strong>, 直接进入服务器的<strong>shell终端</strong><br><img src="/img/201701094.png" alt="进入终端"></p>
+</li>
+<li><p>输入 passwd root 可以更改root用户密码<br><img src="/img/201701096.png" alt="终端界面"></p>
+</li>
+<li><p>拿到手之后先运行以下两条命令进行更新</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$sudo apt-get update</div><div class="line">$ sudo apt-get upgrade</div></pre></td></tr></table></figure></li>
+<li>安装<strong>shadowsocks-python</strong>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install python-setuptools python-dev build-essential </div><div class="line"># python包管理</div><div class="line">$ sudo easy_install pip</div><div class="line"># python包下载</div><div class="line">$ pip install shadowsocks</div></pre></td></tr></table></figure></li>
+<li>不出意外的话会出现成功安装的提示,接下来新建配置文件.不熟悉vi编辑器基本操作可以<a href="http://c.biancheng.net/cpp/html/2735.html" target="_blank" rel="external">进来扫盲</a>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo vi /etc/shadowsocks.json</div></pre></td></tr></table></figure></li>
+<li>在配置文件中写入以下内容  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:vps的ip,</div><div class="line">    &quot;server_port&quot;:443, #服务器端口</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;认证密码&quot;,</div><div class="line">    &quot;timeout&quot;:600, #超时设置</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot; #加密方式</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<li>保存后启动ss服务  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sserver -c /etc/shadowsocks.json -d start</div><div class="line"># 关闭ss服务指令:</div><div class="line">$ ssserver -d stop</div></pre></td></tr></table></figure>
+到此,服务器端的配置已经完毕</li>
+</ul>
+<h4 id="客户端配置连接"><a href="#客户端配置连接" class="headerlink" title="客户端配置连接"></a>客户端配置连接</h4><ul>
+<li><p>Linux客户端: 这篇<a href="http://www.iyingsuo.com/android-shadowsocks-tutorials.html" target="_blank" rel="external">教程</a>已经详细介绍了Ubuntu上的配置方法,亲测有效,其他Linux系统同理,改一下命令就行了</p>
+</li>
+<li><p>ios客户端: 到App store下载<strong>ShadowTunnel</strong>(目前免费,不过开发团队说接下来会开始收费喔,抓紧下载吧)进行连接,同样亲测有效<br><img src="/img/201701098.png" width="330" height="500" alt="ShadowTunnel---IOS" align="center"></p>
+</li>
+<li><p>Android客户端: 下载<strong>影梭</strong>,<a href="http://www.iyingsuo.com/android-shadowsocks-tutorials.html" target="_blank" rel="external">官方使用说明和apk地址</a>,亲测有效<br><img src="/img/201701097.png" width="330" height="500" alt="影梭---Android" align="center"></p>
+</li>
+<li><p>Windows客户端: <a href="/img/201701091.png">官方教程</a>,这个没有测试过,等你告诉我效果hhh</p>
+</li>
+</ul>
+<h4 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h4><p>  顺利的话,打开浏览器就能看到下面这个美丽的画面啦,如果在操作中遇到问题,欢迎留言,我会在第一时间回复你的 ^_^<br>  <img src="/img/201701099.png" alt=""> </p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[算是年度读书总结 ?]]></title>
       <url>http://blog.wususu.cn/2016/12/31/%E7%AE%97%E6%98%AF%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%E5%90%A7/</url>
       <content type="html"><![CDATA[<h4 id="趁着2016还没走-赶紧发出最后一篇记录"><a href="#趁着2016还没走-赶紧发出最后一篇记录" class="headerlink" title="趁着2016还没走, 赶紧发出最后一篇记录"></a>趁着2016还没走, 赶紧发出最后一篇记录</h4><p>走着走着, 不知不觉已经踩到2016的尾巴, 仅仅总结一下自己这一年的技术之路.<br>同时也希望2017能更深入学习探索, 接触更美的东西.</p>
