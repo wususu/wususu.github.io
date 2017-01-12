@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title><![CDATA[<<PHP与jQuery开发实例>>勘误]]></title>
+      <url>http://blog.wususu.cn/2017/01/12/PHP%E4%B8%8EjQuery%E5%BC%80%E5%8F%91%E5%AE%9E%E4%BE%8B-%E5%8B%98%E8%AF%AF/</url>
+      <content type="html"><![CDATA[<p>最近在看&lt;<php与jquery开发实例>&gt;(PHP jQuery Cookbook)时发现书中的一处错误,在此记录.<br>“创建选择/取消所有复选框的功能”(12页)一节中说checkbox中checked属性在选中为选中状态下为true/false:</php与jquery开发实例></p>
+<ul>
+<li>书本部分源码:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if ($(this).attr(&quot;checked&quot;) == true)&#123;</div><div class="line">	$(&apos;.toggle&apos;).attr(&apos;checked&apos;, &apos;true&apos;);</div><div class="line">&#125;</div><div class="line">else &#123;</div><div class="line">	$(&apos;.toggle&apos;).removeAttr(&apos;checked&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<li>这是测试源码:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">// 输出 false</div><div class="line">console.log(document.getElementById(&quot;handle&quot;).checked);</div><div class="line">// 输出 undefined</div><div class="line">console.log($(&apos;#handle&apos;).attr(&apos;checked&apos;));</div><div class="line">$(&apos;#handle&apos;).click(function () &#123;</div><div class="line">    // 输出 true</div><div class="line">    console.log(document.getElementById(&quot;handle&quot;).checked);</div><div class="line">    // 输出 checked</div><div class="line">    console.log($(this).attr(&apos;checked&apos;));</div><div class="line">    if ($(this).attr(&quot;checked&quot;) == &apos;checked&apos;)&#123;</div><div class="line">        $(&apos;.toggle&apos;).attr(&apos;checked&apos;, &apos;true&apos;);</div><div class="line">    &#125;else &#123;</div><div class="line">        $(&apos;.toggle&apos;).removeAttr(&apos;checked&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong> 由此可见,当使用原生js时,checked属性值为true/false, jQuery中,属性值为checked/undefined. 赋值时,true与checked等效 </strong></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[搭建境外服务器,科学越过GFW]]></title>
       <url>http://blog.wususu.cn/2017/01/09/%E6%90%AD%E5%BB%BA%E5%A2%83%E5%A4%96%E6%9C%8D%E5%8A%A1%E5%99%A8-%E7%A7%91%E5%AD%A6%E8%B6%8A%E8%BF%87GFW/</url>
       <content type="html"><![CDATA[<p>  翻墙是一个程序员的必备技能之一,这里介绍一下我所使用过的翻墙方法:</p>
